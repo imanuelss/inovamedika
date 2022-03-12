@@ -12,7 +12,7 @@
 								<a href="login-4.html" class="fxt-logo"><img src= {{ asset('asset/login/img/inova2.png') }}   alt="Logo"></a>
 							</div>
 							<div class="fxt-transformY-50 fxt-transition-delay-2">
-								<h1>Welcome To Klinik hehe</h1>
+								<h1>Welcome To Klinik </h1>
 							</div>
 							<div class="fxt-transformY-50 fxt-transition-delay-3">
 								<p>Klinik ini menyediakan solusi untuk kesehatan anda gaskan daftar!</p>

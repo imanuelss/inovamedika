@@ -9,6 +9,6 @@ class pegawaiModel extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nip', 'nama_pegawai', 'alamat','posisi_jabatan'
+        'nip', 'nama', 'alamat','posisijabatan'
     ];
 }

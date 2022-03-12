@@ -11,4 +11,4 @@ class pendaftaranModel extends Model
     protected $fillable = [
         'nomor', 'nama', 'alamat','usia','jeniskelamin','keluhan'
     ];
-}
+} 

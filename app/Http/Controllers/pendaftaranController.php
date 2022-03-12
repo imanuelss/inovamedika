@@ -1,16 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\pendaftaranModel;
+use App\Models\pasienModel;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class pendaftaranController extends Controller
 {
+
     public function index()
     {
-        $pendaftaran = pendaftaranModel::latest()->get();
-        return view('pendaftaran', compact('pendaftaran'));
+        $ewos = pasienModel::latest()->get();
+        
+        return view('pasien.index', compact('ewos'));
+    }
+    public function create()
+    {
+    
+        return view('pasien.creatependaftaran');
+    }
+
+    public function edit($id)
+    {
+        $ewos = pasienModel::findOrFail($id);
+        
+        return view('pasien.edit', compact('ewos'));
+
     }
     public function store(Request $request)
     {
@@ -18,23 +33,23 @@ class pendaftaranController extends Controller
             'nomor' => 'required|string|max:155',
             'nama' => 'required',
             'alamat' => 'required',
-            'usia' => 'required',
             'jeniskelamin' => 'required',
-            'keluhan' => 'required',
+           
+            'usia' => 'required',
         ]);
 
-        $pendaftaran = pendaftaranModel::create([
+        $pasien = pasienModel::create([
             'nomor' => $request->nomor,
             'nama' => $request->nama,
             'alamat' => $request->alamat,
-            'usia' => $request->usia,
             'jeniskelamin' => $request->jeniskelamin,
-            'keluhan' => Str::keluhan($request->keluhan)
+            'keluhan' => $request->keluhan,
+            'usia' => $request->usia
         ]);  
 
-        if ($pendaftaran) {
+        if ($pasien) {
             return redirect()
-                ->route('pendaftaran')
+                ->route('pasien.index')
                 ->with([
                     'success' => 'New post has been created successfully'
                 ]);
@@ -44,6 +59,62 @@ class pendaftaranController extends Controller
                 ->withInput()
                 ->with([
                     'error' => 'Some problem occurred, please try again'
+                ]);
+        }
+    }
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'nomor' => 'required|string|max:155',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'jeniskelamin' => 'required',  
+            'usia' => 'required',
+        ]);
+
+        $ewos = pasienModel::findOrFail($id);
+
+        $ewos->update([
+            'nomor' => $request->nomor,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'jeniskelamin' => $request->jeniskelamin,
+            'keluhan' => $request->keluhan,
+            'usia' => $request->usia
+        ]);
+
+        if ($ewos) {
+            return redirect()
+                ->route('pasien.index')
+                ->with([
+                    'success' => 'Post has been updated successfully'
+                ]);
+        } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with([
+                    'error' => 'Some problem has occured, please try again'
+                ]);
+        }
+    }
+
+    public function destroy($id)
+    {
+        $ewos = pasienModel::findOrFail($id);
+        $ewos->delete();
+
+        if ($ewos) {
+            return redirect()
+                ->route('pasien.index')
+                ->with([
+                    'success' => 'pasien has been deleted successfully'
+                ]);
+        } else {
+            return redirect()
+                ->route('pasien.index')
+                ->with([
+                    'error' => 'Some problem has occurred, please try again'
                 ]);
         }
     }

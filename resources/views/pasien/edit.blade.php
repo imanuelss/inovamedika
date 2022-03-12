@@ -32,14 +32,14 @@
 
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="{{ route('post.update', $post->id) }}" method="POST">
+                        <form action="{{ route('pasien.update', $ewos->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 
                             <div class="form-group">
                                 <label for="nomor">nomor</label>
                                 <input type="text" class="form-control @error('nomor') is-invalid @enderror"
-                                    name="nomor" value="{{ old('nomor', $post->nomor) }}" required>
+                                    name="nomor" value="{{ old('nomor', $ewos->nomor) }}" required>
 
                                 <!-- error message untuk nomor -->
                                 @error('nomor')
@@ -52,7 +52,7 @@
                             <div class="form-group">
                                 <label for="nama">nama</label>
                                 <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                    name="nama" value="{{ old('nama', $post->nama) }}" required>
+                                    name="nama" value="{{ old('nama', $ewos->nama) }}" required>
 
                                 <!-- error message untuk nama -->
                                 @error('nama')
@@ -65,7 +65,7 @@
                             <div class="form-group">
                                 <label for="alamat">alamat</label>
                                 <input type="text" class="form-control @error('alamat') is-invalid @enderror"
-                                    name="alamat" value="{{ old('alamat', $post->alamat) }}" required>
+                                    name="alamat" value="{{ old('alamat', $ewos->alamat) }}" required>
 
                                 <!-- error message untuk alamat -->
                                 @error('alamat')
@@ -78,7 +78,7 @@
                             <div class="form-group">
                                 <label for="usia">usia</label>
                                 <input type="text" class="form-control @error('usia') is-invalid @enderror"
-                                    name="usia" value="{{ old('usia', $post->usia) }}" required>
+                                    name="usia" value="{{ old('usia', $ewos->usia) }}" required>
 
                                 <!-- error message untuk usia -->
                                 @error('usia')
@@ -91,7 +91,7 @@
                             <div class="form-group">
                                 <label for="jeniskelamin">jeniskelamin</label>
                                 <input type="text" class="form-control @error('jeniskelamin') is-invalid @enderror"
-                                    name="jeniskelamin" value="{{ old('jeniskelamin', $post->jeniskelamin) }}" required>
+                                    name="jeniskelamin" value="{{ old('jeniskelamin', $ewos->jeniskelamin) }}" required>
 
                                 <!-- error message untuk jeniskelamin -->
                                 @error('jeniskelamin')
@@ -106,7 +106,7 @@
                                 <textarea
                                     name="keluhan" id="keluhan"
                                     class="form-control @error('keluhan') is-invalid @enderror" name="keluhan" id="keluhan"
-                                    rows="5" required>{{ old('keluhan', $post->keluhan) }}</textarea>
+                                    rows="5" required>{{ old('keluhan', $ewos->keluhan) }}</textarea>
 
                                 <!-- error message untuk keluhan -->
                                 @error('keluhan')
@@ -117,7 +117,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-md btn-primary">Update</button>
-                            <a href="{{ route('post.index') }}" class="btn btn-md btn-secondary">back</a>
+                            <a href="{{ route('pasien.index') }}" class="btn btn-md btn-secondary">back</a>
                         </form>
                     </div>
                 </div>

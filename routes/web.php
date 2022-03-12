@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\obatController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pendaftaranController;
+use App\Http\Controllers\pegawaiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('pendaftaran', pendaftaranController::class);  
+Route::get('pasien', [pendaftaranController::class, 'index']);
+Route::resource('pasien', pendaftaranController::class);
+
+Route::get('pegawai', [pegawaiController::class, 'index']);
+Route::resource('pegawai', pegawaiController::class);
+Route::get('printpdf', [pegawaiController::class, 'printpdf'])->name('printpdf');
+
+
+Route::get('obat', [obatController::class, 'index']);
+Route::resource('obat', obatController::class);

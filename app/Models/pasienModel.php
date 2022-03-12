@@ -9,6 +9,6 @@ class pasienModel extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nomor_pasien', 'nama_pasien', 'alamat','diagnosa','tindakan'
+        'nomor', 'nama', 'alamat','usia','jeniskelamin','keluhan',
     ];
 }

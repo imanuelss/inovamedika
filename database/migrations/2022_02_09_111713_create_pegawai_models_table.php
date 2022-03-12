@@ -16,9 +16,9 @@ class CreatePegawaiModelsTable extends Migration
         Schema::create('pegawai_models', function (Blueprint $table) {
             $table->id();
             $table->integer('nip');
-            $table->text('nama_pegawai');
+            $table->text('nama');
             $table->text('alamat');
-            $table->text('posisi_jabatan');
+            $table->text('posisijabatan');
             $table->timestamps();
         });
     }

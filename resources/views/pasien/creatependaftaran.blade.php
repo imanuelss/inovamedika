@@ -32,8 +32,8 @@
 
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-
-                        <form action="{{ route('pendaftaran') }}">
+            
+                        <form action="{{ route('pasien.store') }}" method="POST">
                             @csrf
 
                             <div class="form-group">
@@ -118,7 +118,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-md btn-primary">Save</button>
-                            <a href="{{ route('post.index') }}" class="btn btn-md btn-secondary">back</a>
+                            <a href="{{ route('pasien.index') }}" class="btn btn-md btn-secondary">back</a>
 
                         </form>
                     </div>
@@ -135,13 +135,13 @@
 
     <!-- include summernote js -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('#keluhan').summernote({
                 height: 250, //set editable area's height
             });
         })
-    </script>
+    </script> --}}
 </body>
 
 </html>

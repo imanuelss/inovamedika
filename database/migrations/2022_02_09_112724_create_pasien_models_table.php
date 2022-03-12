@@ -16,11 +16,12 @@ class CreatePasienModelsTable extends Migration
         Schema::create('pasien_models', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('nomor_pasien');
-            $table->text('nama_pasien');
+            $table->integer('nomor');
+            $table->text('nama');
             $table->text('alamat');
-            $table->text('diagnosa');
-            $table->text('tindakan');
+            $table->text('jeniskelamin');
+            $table->text('keluhan');
+            $table->text('usia');
         });
     }
 

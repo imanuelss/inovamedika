@@ -79,11 +79,11 @@
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a href="project.html">
+                            <a href=" {{ route('pegawai.index') }}" >
                                Pegawai
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="project-details.html">
                                 Pegawai 1
                             </a>
@@ -92,19 +92,20 @@
                             <a href="new-project.html">
                                 New Project
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 
                 <li class="sidebar-submenu">
                     <a href="pasien.html" class="sidebar-menu-dropdown">
                         <i class='bx bxs-user'></i>
+                        {{-- <span class="iconify" data-icon="bx:band-aid"></span> --}}
                         <span>Pasien</span>
                         <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a href= {{ route('pendaftaran.create') }} >
+                            <a href=" {{ route('pasien.index') }}" >
                                Pendaftaran Pasien baru
                             </a>
                         </li>
@@ -118,14 +119,14 @@
 
                 <li class="sidebar-submenu">
                     <a href="tagihan.html" class="sidebar-menu-dropdown">
-                        <i class='bx bxs-bolt'></i>
-                        <span>Tagihan</span>
+                        <i class='bx bx-band-aid'></i>
+                        <span>obat</span>
                         <div class="dropdown-icon"><i class='bx bx-chevron-down'></i></div>
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a href="tagihan-obat.html">
-                               Tagihan Obat
+                            <a href=" {{ route('obat.index') }}" >
+                               Obat
                             </a>
                         </li>
                         <li>
@@ -204,13 +205,13 @@
         <div class="d-flex align-items-center">
 
             <!-- App Search-->
-            <form class="app-search d-none d-lg-block">
+            {{-- <form class="app-search d-none d-lg-block">
                 <div class="position-relative">
                     <input type="text" class="form-control" placeholder="Search">
                     <span class="bx bx-search-alt"></span>
-                </div>
+                </div> --}}
             </form>
-            <div class="dropdown d-inline-block d-lg-none ms-2">
+            {{-- <div class="dropdown d-inline-block d-lg-none ms-2">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class='bx bx-search-alt' ></i>
                     </button>
@@ -227,23 +228,23 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="dropdown d-inline-block">
+            {{-- <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="btn dropdown-toggle" id="header-lang-img">
                             EN 
                             <i class='bx bx-caret-down'></i>
                         </span>
                     </button>
-                <div class="dropdown-menu dropdown-menu-end">
+                <div class="dropdown-menu dropdown-menu-end"> --}}
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
+                    {{-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="en">
                         <img src="./images/flags/us.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
-                    </a>
+                    </a> --}}
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
+                    {{-- <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp">
                         <img src="./images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
                     </a>
 
@@ -261,7 +262,7 @@
                     <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru">
                         <img src="./images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                     </a>
-                </div>
+                </div> --}}
             </div>
             <!-- <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
@@ -305,7 +306,7 @@
     <div class="main">
 
 
-        {{-- <div class="main-content dashboard">
+        <div class="main-content dashboard">
             <div class="row">
                 <div class="col-12">
                     <div class="box card-box">
@@ -1172,7 +1173,7 @@
                 </div>
             </div>
 
-        </div> --}}
+        </div>
     </div>
     <!-- END MAIN CONTENT -->
 
@@ -1196,6 +1197,7 @@
     <script src= {{ asset('asset/dashboard/js/dashboard.js')}} ></script>
     <script src= {{ asset('asset/dashboard/js/shortcode.js')}} ></script>
     <script src= {{ asset('asset/dashboard/js/pages/dashboard.js')}} ></script>
+
 
 
 </body>
